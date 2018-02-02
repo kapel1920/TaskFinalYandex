@@ -1,0 +1,24 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectModuleManager\">\n    <modules>\n      <module fileurl=\"file://$PROJECT_DIR$/Task4n.iml\" filepath=\"$PROJECT_DIR$/Task4n.iml\" />\n    </modules>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ .idea/modules.xml	(revision )
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Task4n.iml" filepath="$PROJECT_DIR$/Task4n.iml" />
++      <module fileurl="file://$PROJECT_DIR$/TaskFinalYandex.iml" filepath="$PROJECT_DIR$/TaskFinalYandex.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: Task4n.iml
+===================================================================
+--- Task4n.iml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ TaskFinalYandex.iml	(revision )
+@@ -1,0 +1,0 @@

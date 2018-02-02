@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1517510425300" stop="1517510425523" version="1.5.2" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Яндекс Маркет</name>
+    <description type="text"></description>
+    <test-cases>
+        <test-case start="1517510425342" stop="1517510425515" status="pending">
+            <name>Поиск телевизора в Яндекс маркете</name>
+            <title>Поиск телевизора в Яндекс маркете</title>
+            <description type="text"></description>
+            <failure>
+                <message>Unimplemented steps were found</message>
+                <stack-trace>There are no stack trace</stack-trace>
+            </failure>
+            <steps>
+                <step start="1517510425490" stop="1517510425498" status="canceled">
+                    <name>Осуществлен переход на страницу Yandex</name>
+                    <title>Осуществлен переход на страницу Yandex</title>
+                </step>
+                <step start="1517510425511" stop="1517510425511" status="canceled">
+                    <name>Выбран пунк меню "Маркет"</name>
+                    <title>Выбран пунк меню "Маркет"</title>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="story" value="Поиск телевизора в Яндекс маркете"/>
+                <label name="feature" value="Яндекс Маркет"/>
+                <label name="host" value="NB-03176"/>
+                <label name="thread" value="8224@NB-03176.main(1)"/>
+                <label name="framework" value="CucumberJVM"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="feature" value="Яндекс Маркет"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

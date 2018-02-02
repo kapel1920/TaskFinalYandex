@@ -1,0 +1,14 @@
+{
+  "testCases" : [ {
+    "uid" : "84c5fefa8d5ed409",
+    "name" : "Поиск телевизора в Яндекс маркете",
+    "title" : "Поиск телевизора в Яндекс маркете",
+    "time" : {
+      "start" : 1517510298380,
+      "stop" : 1517510308259,
+      "duration" : 9879
+    },
+    "severity" : "NORMAL",
+    "status" : "PENDING"
+  } ]
+}

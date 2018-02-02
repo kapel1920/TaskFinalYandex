@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1517510298260" stop="1517510308265" version="1.5.2" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Яндекс Маркет</name>
+    <description type="text"></description>
+    <test-cases>
+        <test-case start="1517510298380" stop="1517510308259" status="pending">
+            <name>Поиск телевизора в Яндекс маркете</name>
+            <title>Поиск телевизора в Яндекс маркете</title>
+            <description type="text"></description>
+            <failure>
+                <message>Unimplemented steps were found</message>
+                <stack-trace>There are no stack trace</stack-trace>
+            </failure>
+            <steps>
+                <step start="1517510308234" stop="1517510308242" status="canceled">
+                    <name>Осуществлен переход на страницу Yandex</name>
+                    <title>Осуществлен переход на страницу Yandex</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выбран пунк меню "Маркет"</name>
+                    <title>Выбран пунк меню "Маркет"</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выбран пунк меню - "Страхование путешественников"</name>
+                    <title>Выбран пунк меню - "Страхование путешественников"</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнена проверка текстовки Страхование путешественников на странице SP</name>
+                    <title>Выполнена проверка текстовки Страхование путешественников на странице SP</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнено нажатие на кнопку - оформить онлайн</name>
+                    <title>Выполнено нажатие на кнопку - оформить онлайн</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнен переход на страницу выбора полиса</name>
+                    <title>Выполнен переход на страницу выбора полиса</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная</name>
+                    <title>Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнено нажатие на кнопку Продолжить</name>
+                    <title>Выполнено нажатие на кнопку Продолжить</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>заполняются поля:</name>
+                    <title>заполняются поля:</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>значения полей равны:</name>
+                    <title>значения полей равны:</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Выполнено нажатие на кнопку - Продолжить</name>
+                    <title>Выполнено нажатие на кнопку - Продолжить</title>
+                </step>
+                <step start="1517510308254" stop="1517510308254" status="canceled">
+                    <name>Проверка появления текста Заполнены не все обязательные поля</name>
+                    <title>Проверка появления текста Заполнены не все обязательные поля</title>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="story" value="Поиск телевизора в Яндекс маркете"/>
+                <label name="feature" value="Яндекс Маркет"/>
+                <label name="host" value="NB-03176"/>
+                <label name="thread" value="4960@NB-03176.main(1)"/>
+                <label name="framework" value="CucumberJVM"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="feature" value="Яндекс Маркет"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

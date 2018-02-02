@@ -1,0 +1,276 @@
+Index: src/main/java/steps/ScenarioSteps.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package steps;\n\nimport cucumber.api.DataTable;\nimport cucumber.api.java.en.When;\nimport org.junit.Assert;\nimport org.openqa.selenium.By;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.support.ui.ExpectedConditions;\nimport org.openqa.selenium.support.ui.Wait;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport pages.MainPage;\nimport pages.SPpage;\nimport pages.SendAppPage;\nimport cucumber.api.java.en.Then;\n\nimport static org.junit.Assert.assertEquals;\nimport static steps.BaseSteps.baseUrl;\n\npublic class ScenarioSteps {\n\n    MainSteps mainSteps = new MainSteps();\n    SendAppSteps sendAppSteps = new SendAppSteps();\n    MainPage mainPage = new MainPage();\n    SPpage sPpage = new SPpage();\n    SendAppPage sendAppPage = new SendAppPage();\n\n    @When(\"Осуществлен переход на страницу сбербанка\")\n    public void stepTransferToSberbank() {\n        BaseSteps.getDriver().get( baseUrl );\n    }\n\n    @When(\"^Выбран пунк меню \\\"(.*)\\\"$\")\n    public void stepSelectMainMenu(String menuItem) {\n        mainSteps.stepSelectMainMenu( menuItem );\n    }\n\n    @When(\"^Выбран пунк меню - \\\"(.*)\\\"$\")\n    public void stepSelectTypeInsurance(String menuItem) {\n        mainPage.waitVisibilityOfelement();\n        mainSteps.stepSelectSubMenu( menuItem );\n    }\n    @When( \"Выполнена проверка текстовки Страхование путешественников на странице SP\" )\n    public void stepCheckTextOnPAgeSP (){\n        Assert.assertTrue(BaseSteps.getDriver().findElement( By.cssSelector(\"div[class='sbrf-rich-outer']\")).getText().contains(\"Страхование путешественников\"));\n    }\n\n    @When( \"Выполнено нажатие на кнопку - оформить онлайн\" )\n    public void stepClickAppButton(){\n        sPpage.sendButton.click();\n    }\n\n    @Then(\"Выполнен переход на страницу выбора полиса\")\n    public void stepChooseWindows() {\n        sPpage.switchWindows();\n    }\n\n    @When( \"Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная\" )\n    public void stepClickMinSumma (){\n        Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);\n        wait.until( ExpectedConditions.visibilityOf(\n                BaseSteps.getDriver().findElement(By.xpath(\"//*[contains(text(),\\\"Минимальная\\\")]\")))).click();\n    }\n\n    @When( \"Выполнено нажатие на кнопку Продолжить\" )\n    public void stepClickButtonNextPage() {\n        BaseSteps.getDriver().findElement( By.xpath( \"//SPAN[@ng-click='save()'][text()='Оформить']\" ) ).click();\n    }\n\n\n    @When(\"^заполняются поля:$\")\n    public void stepFullfillFields(DataTable fields) {\n        fields.asMap( String.class, String.class ).forEach(\n                (key, value) -> sendAppSteps.stepFillField( key, value ) );\n    }\n\n    @Then(\"^значения полей равны:$\")\n    public void checkFillForm(DataTable fields){\n        fields.asMap(String.class, String.class)\n                .forEach((field, value) -> sendAppSteps.stepCheckFillField(field, value));\n    }\n\n    @When(\"Выполнено нажатие на кнопку - Продолжить\")\n    public void stepSendAppButton() {\n        sendAppPage.sendButton.click();\n    }\n\n    @Then( \"Проверка появления текста Заполнены не все обязательные поля\")\n    public void stepCheckErrorMsg(){\n        assertEquals(\"Заполнены не все обязательные поля\", BaseSteps.getDriver().findElement(By.xpath(\"//DIV[@ng-show='tryNext && myForm.$invalid'][text()='Заполнены не все обязательные поля']\")).getText());\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/steps/ScenarioSteps.java	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ src/main/java/steps/ScenarioSteps.java	(revision )
+@@ -24,22 +24,22 @@
+     SPpage sPpage = new SPpage();
+     SendAppPage sendAppPage = new SendAppPage();
+ 
+-    @When("Осуществлен переход на страницу сбербанка")
+-    public void stepTransferToSberbank() {
++    @When("Осуществлен переход на страницу Яндекса")
++    public void stepTransferToYandex() {
+         BaseSteps.getDriver().get( baseUrl );
+     }
+ 
+-    @When("^Выбран пунк меню \"(.*)\"$")
++/*    @When("^Выбран пунк меню \"(.*)\"$")
+     public void stepSelectMainMenu(String menuItem) {
+         mainSteps.stepSelectMainMenu( menuItem );
+-    }
++    }*/
+ 
+-    @When("^Выбран пунк меню - \"(.*)\"$")
++ /*   @When("^Выбран пунк меню - \"(.*)\"$")
+     public void stepSelectTypeInsurance(String menuItem) {
+         mainPage.waitVisibilityOfelement();
+         mainSteps.stepSelectSubMenu( menuItem );
+-    }
+-    @When( "Выполнена проверка текстовки Страхование путешественников на странице SP" )
++    }*/
++ /*   @When( "Выполнена проверка текстовки Страхование путешественников на странице SP" )
+     public void stepCheckTextOnPAgeSP (){
+         Assert.assertTrue(BaseSteps.getDriver().findElement( By.cssSelector("div[class='sbrf-rich-outer']")).getText().contains("Страхование путешественников"));
+     }
+@@ -87,5 +87,5 @@
+     @Then( "Проверка появления текста Заполнены не все обязательные поля")
+     public void stepCheckErrorMsg(){
+         assertEquals("Заполнены не все обязательные поля", BaseSteps.getDriver().findElement(By.xpath("//DIV[@ng-show='tryNext && myForm.$invalid'][text()='Заполнены не все обязательные поля']")).getText());
+-    }
++    }*/
+ }
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectModuleManager\">\n    <modules>\n      <module fileurl=\"file://$PROJECT_DIR$/Task4n.iml\" filepath=\"$PROJECT_DIR$/Task4n.iml\" />\n    </modules>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ .idea/modules.xml	(revision )
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Task4n.iml" filepath="$PROJECT_DIR$/Task4n.iml" />
++      <module fileurl="file://$PROJECT_DIR$/TaskFinalYandex.iml" filepath="$PROJECT_DIR$/TaskFinalYandex.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/pages/MainPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pages;\n\nimport org.openqa.selenium.By;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.WebElement;\nimport org.openqa.selenium.support.FindBy;\nimport org.openqa.selenium.support.PageFactory;\nimport org.openqa.selenium.support.ui.ExpectedConditions;\nimport org.openqa.selenium.support.ui.Wait;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport steps.BaseSteps;\n\n\npublic class MainPage {\n\n\n\n    @FindBy (xpath = \"//div[contains(@class,'bp-area header-container')]\")\n    WebElement mainMenu;\n\n\n    public MainPage() {\n        PageFactory.initElements( BaseSteps.getDriver(), this);\n\n    }\n\n    public void selectMainMenu(String menuItem){\n        mainMenu.findElement(By.xpath(\".//span[contains(text(),'\"+menuItem+\"')]\")).click();\n\n    }\n    public void selectSubMenu(String menuItem){\n        mainMenu.findElement(By.xpath(\".//a[contains(text(),'\"+menuItem+\"')]\")).click();\n    }\n\n    public void waitVisibilityOfelement(){\n        Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);\n        wait.until(ExpectedConditions.visibilityOf(\n                BaseSteps.getDriver().findElement(By.xpath(\"//div[contains(@class,'bp-area header-container')]//a[contains(text(),'Страхование путешественников')]\"))));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/pages/MainPage.java	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ src/main/java/pages/MainPage.java	(revision )
+@@ -15,26 +15,26 @@
+ 
+ 
+ 
+-    @FindBy (xpath = "//div[contains(@class,'bp-area header-container')]")
++    @FindBy (xpath = "//a[contains(@class,'home-link')][contains(text(),\"Маркет\")]")
+     WebElement mainMenu;
+ 
+ 
+     public MainPage() {
+-        PageFactory.initElements( BaseSteps.getDriver(), this);
++        PageFactory.initElements(BaseSteps.getDriver(), this);
+ 
+     }
+ 
+     public void selectMainMenu(String menuItem){
+-        mainMenu.findElement(By.xpath(".//span[contains(text(),'"+menuItem+"')]")).click();
++        mainMenu.findElement(By.xpath("//a[contains(@class,'home-link')][contains(text(),\"Маркет\")]")).click();
+ 
+     }
+-    public void selectSubMenu(String menuItem){
++  /*  public void selectSubMenu(String menuItem){
+         mainMenu.findElement(By.xpath(".//a[contains(text(),'"+menuItem+"')]")).click();
+-    }
++    }*/
+ 
+     public void waitVisibilityOfelement(){
+         Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 5, 1000);
+         wait.until(ExpectedConditions.visibilityOf(
+-                BaseSteps.getDriver().findElement(By.xpath("//div[contains(@class,'bp-area header-container')]//a[contains(text(),'Страхование путешественников')]"))));
++                BaseSteps.getDriver().findElement(By.xpath("//a[contains(@class,'home-link')][contains(text(),\"Маркет\")]')]"))));
+     }
+ }
+Index: src/main/java/steps/MainSteps.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package steps;\n\nimport pages.MainPage;\nimport ru.yandex.qatools.allure.annotations.Step;\n\nimport static steps.BaseSteps.baseUrl;\n\npublic class MainSteps {\n\n    @Step (\"Осуществлен переход на страницу сбербанка\")\n    public void stepTransferToSberbank (){\n        BaseSteps.getDriver().get(baseUrl);\n    }\n\n    @Step(\"Выбран пунк меню {0}\")\n    public void stepSelectMainMenu(String menuItem){\n        MainPage mainPage = new MainPage();\n        mainPage.selectMainMenu(menuItem);\n    }\n\n    @Step(\"Выбран пунк меню {0}]\")\n    public void stepSelectSubMenu(String menuItem){\n        MainPage mainPage = new MainPage();\n        mainPage.waitVisibilityOfelement();\n        mainPage.selectSubMenu(menuItem);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/steps/MainSteps.java	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ src/main/java/steps/MainSteps.java	(revision )
+@@ -7,8 +7,8 @@
+ 
+ public class MainSteps {
+ 
+-    @Step ("Осуществлен переход на страницу сбербанка")
+-    public void stepTransferToSberbank (){
++    @Step ("Осуществлен переход на страницу")
++    public void stepTransferToYandex (){
+         BaseSteps.getDriver().get(baseUrl);
+     }
+ 
+@@ -18,10 +18,10 @@
+         mainPage.selectMainMenu(menuItem);
+     }
+ 
+-    @Step("Выбран пунк меню {0}]")
++ /*   @Step("Выбран пунк меню {0}]")
+     public void stepSelectSubMenu(String menuItem){
+         MainPage mainPage = new MainPage();
+         mainPage.waitVisibilityOfelement();
+         mainPage.selectSubMenu(menuItem);
+-    }
++    }*/
+ }
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <module name=\"AutoTestCucumber\" />\n      </profile>\n    </annotationProcessing>\n    <bytecodeTargetLevel>\n      <module name=\"AutoTestCucumber\" target=\"1.8\" />\n    </bytecodeTargetLevel>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ .idea/compiler.xml	(revision )
+@@ -7,10 +7,12 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+         <module name="AutoTestCucumber" />
++        <module name="Task4n" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+       <module name="AutoTestCucumber" target="1.8" />
++      <module name="Task4n" target="1.8" />
+     </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/test/resources/Страхование.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#language: ru\n\nФункционал: Страхование\n\n  Сценарий: Заявка на оформление полиса Страхование Путешественника\n\n    Когда Осуществлен переход на страницу сбербанка\n    Когда Выбран пунк меню \"Застраховать себя\"\n    Когда Выбран пунк меню - \"Страхование путешественников\"\n    Когда Выполнена проверка текстовки Страхование путешественников на странице SP\n    Когда Выполнено нажатие на кнопку - оформить онлайн\n    Тогда Выполнен переход на страницу выбора полиса\n    Когда Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная\n    Когда Выполнено нажатие на кнопку Продолжить\n    Когда заполняются поля:\n      | Фамилия        | Иванов     |\n      | Имя            | Иван       |\n      | Отчество       | Иванович   |\n      | Фамилия2       | Ivanov     |\n      | Имя2           | Ivan       |\n      | Дата рождения  | 01.01.1990 |\n      | Дата рождения2 | 01.01.1990 |\n    Тогда значения полей равны:\n      | Фамилия        | Иванов     |\n      | Имя            | Иван       |\n      | Отчество       | Иванович   |\n      | Фамилия2       | Ivanov     |\n      | Имя2           | Ivan       |\n      | Дата рождения  | 01.01.1990 |\n      | Дата рождения2 | 01.01.1990 |\n    Когда Выполнено нажатие на кнопку - Продолжить\n    Тогда Проверка появления текста Заполнены не все обязательные поля\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/resources/Страхование.feature	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ src/test/resources/Страхование.feature	(revision )
+@@ -1,34 +1,32 @@
+ #language: ru
+ 
+-Функционал: Страхование
++Функционал: Яндекс Маркет
+ 
+-  Сценарий: Заявка на оформление полиса Страхование Путешественника
++  Сценарий: Поиск телевизора в Яндекс маркете
+ 
+-    Когда Осуществлен переход на страницу сбербанка
+-    Когда Выбран пунк меню "Застраховать себя"
++    Когда Осуществлен переход на страницу Yandex
++    Когда Выбран пунк меню "Маркет"
+     Когда Выбран пунк меню - "Страхование путешественников"
+-    Когда Выполнена проверка текстовки Страхование путешественников на странице SP
+-    Когда Выполнено нажатие на кнопку - оформить онлайн
+-    Тогда Выполнен переход на страницу выбора полиса
+-    Когда Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная
+-    Когда Выполнено нажатие на кнопку Продолжить
+-    Когда заполняются поля:
+-      | Фамилия        | Иванов     |
+-      | Имя            | Иван       |
+-      | Отчество       | Иванович   |
+-      | Фамилия2       | Ivanov     |
+-      | Имя2           | Ivan       |
+-      | Дата рождения  | 01.01.1990 |
+-      | Дата рождения2 | 01.01.1990 |
+-    Тогда значения полей равны:
+-      | Фамилия        | Иванов     |
+-      | Имя            | Иван       |
+-      | Отчество       | Иванович   |
+-      | Фамилия2       | Ivanov     |
+-      | Имя2           | Ivan       |
+-      | Дата рождения  | 01.01.1990 |
+-      | Дата рождения2 | 01.01.1990 |
+-    Когда Выполнено нажатие на кнопку - Продолжить
+-    Тогда Проверка появления текста Заполнены не все обязательные поля
+-
+-
++        Когда Выполнена проверка текстовки Страхование путешественников на странице SP
++        Когда Выполнено нажатие на кнопку - оформить онлайн
++        Тогда Выполнен переход на страницу выбора полиса
++        Когда Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная
++        Когда Выполнено нажатие на кнопку Продолжить
++        Когда заполняются поля:
++          | Фамилия        | Иванов     |
++          | Имя            | Иван       |
++          | Отчество       | Иванович   |
++          | Фамилия2       | Ivanov     |
++          | Имя2           | Ivan       |
++          | Дата рождения  | 01.01.1990 |
++          | Дата рождения2 | 01.01.1990 |
++        Тогда значения полей равны:
++          | Фамилия        | Иванов     |
++          | Имя            | Иван       |
++          | Отчество       | Иванович   |
++          | Фамилия2       | Ivanov     |
++          | Имя2           | Ivan       |
++          | Дата рождения  | 01.01.1990 |
++          | Дата рождения2 | 01.01.1990 |
++        Когда Выполнено нажатие на кнопку - Продолжить
++        Тогда Проверка появления текста Заполнены не все обязательные поля
+\ No newline at end of file
+Index: Task4n.iml
+===================================================================
+--- Task4n.iml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ TaskFinalYandex.iml	(revision )
+@@ -1,0 +1,0 @@
+Index: environment.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>browser=chrome\nwebdriver.gecko.driver=drv/geckodriver.exe\nwebdriver.chrome.driver=drv/chromedriver.exe\napp.url=http://www.sberbank.ru/ru/person
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+--- environment.properties	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ environment.properties	(revision )
+@@ -1,4 +1,4 @@
+ browser=chrome
+ webdriver.gecko.driver=drv/geckodriver.exe
+ webdriver.chrome.driver=drv/chromedriver.exe
+-app.url=http://www.sberbank.ru/ru/person
+\ No newline at end of file
++app.url=http://www.yandex.ru
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"VcsDirectoryMappings\">\n    <mapping directory=\"\" vcs=\"Git\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision 1a0e63a8c77fe340a43468dfa5c156df657fe024)
++++ .idea/vcs.xml	(revision )
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,239 @@
+{
+  "uid" : "84c5fefa8d5ed409",
+  "name" : "Поиск телевизора в Яндекс маркете",
+  "title" : "Поиск телевизора в Яндекс маркете",
+  "time" : {
+    "start" : 1517510298380,
+    "stop" : 1517510308259,
+    "duration" : 9879
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 12
+  },
+  "failure" : {
+    "message" : "Unimplemented steps were found",
+    "stackTrace" : "There are no stack trace"
+  },
+  "description" : {
+    "value" : null,
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PENDING",
+  "suite" : {
+    "uid" : "e1f39bcd8202bb07",
+    "name" : "Яндекс Маркет",
+    "title" : "Яндекс Маркет"
+  },
+  "steps" : [ {
+    "name" : "Осуществлен переход на страницу Yandex",
+    "title" : "Осуществлен переход на страницу Yandex",
+    "time" : {
+      "start" : 1517510308234,
+      "stop" : 1517510308242,
+      "duration" : 8
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выбран пунк меню \"Маркет\"",
+    "title" : "Выбран пунк меню \"Маркет\"",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выбран пунк меню - \"Страхование путешественников\"",
+    "title" : "Выбран пунк меню - \"Страхование путешественников\"",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнена проверка текстовки Страхование путешественников на странице SP",
+    "title" : "Выполнена проверка текстовки Страхование путешественников на странице SP",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнено нажатие на кнопку - оформить онлайн",
+    "title" : "Выполнено нажатие на кнопку - оформить онлайн",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнен переход на страницу выбора полиса",
+    "title" : "Выполнен переход на страницу выбора полиса",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная",
+    "title" : "Выполнено нажатие на поле 'выберите сумму страховой защиты' - Минимальная",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнено нажатие на кнопку Продолжить",
+    "title" : "Выполнено нажатие на кнопку Продолжить",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "заполняются поля:",
+    "title" : "заполняются поля:",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "значения полей равны:",
+    "title" : "значения полей равны:",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Выполнено нажатие на кнопку - Продолжить",
+    "title" : "Выполнено нажатие на кнопку - Продолжить",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Проверка появления текста Заполнены не все обязательные поля",
+    "title" : "Проверка появления текста Заполнены не все обязательные поля",
+    "time" : {
+      "start" : 1517510308254,
+      "stop" : 1517510308254,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "CANCELED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "host",
+    "value" : "NB-03176"
+  }, {
+    "name" : "suite-name",
+    "value" : "Яндекс Маркет"
+  }, {
+    "name" : "feature",
+    "value" : "Яндекс Маркет"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "story",
+    "value" : "Поиск телевизора в Яндекс маркете"
+  }, {
+    "name" : "thread",
+    "value" : "4960@NB-03176.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "CucumberJVM"
+  } ],
+  "parameters" : [ ]
+}

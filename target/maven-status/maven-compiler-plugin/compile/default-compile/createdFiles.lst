@@ -1,0 +1,10 @@
+steps\SPSteps.class
+pages\SPpage.class
+util\TestProperties.class
+steps\SendAppSteps.class
+pages\SendAppPage.class
+util\AllureReporter.class
+steps\BaseSteps.class
+steps\MainSteps.class
+steps\ScenarioSteps.class
+pages\MainPage.class
